@@ -1,0 +1,26 @@
+import { BaseEntity, Column, CreateDateColumn, Entity, PrimaryGeneratedColumn } from "typeorm";
+
+@Entity('produtos')
+export class Produto extends BaseEntity{
+    @PrimaryGeneratedColumn()
+    id!: number;
+
+    @Column ({type: 'varchar', length: 120})
+    nome!: string;
+
+    @Column ({type: 'text', nullable: true})
+    descricao?: string;
+
+    @Column ({type: 'decimal', precision: 10, scale: 2})
+    preco!: string;
+
+    @Column ({type: 'boolean', default: true})
+    ativo!: string;
+
+    @CreateDateColumn({name: 'criado_em'})
+    criadoEm!: Date;
+
+    @CreateDateColumn({name: 'atualizado_em', nullable: true})
+    atualizadoEm!: Date;
+
+}
