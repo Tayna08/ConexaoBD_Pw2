@@ -50,7 +50,7 @@
                                 <tr>
                                     <th><%= index + 1 %></th>
                                     <td><%= produtos[index].nome %></td>
-                                    <td><%= new Int NumberFormat%></td>
+                                    <td><%= new Intl.NumberFormat('pt-BR'),(style: 'currency')%></td>
                                     <td>
                                         <% if (produtos[index].ativo) { %>
 
@@ -62,7 +62,7 @@
 
                                         <% } %>
                                     </td>
-                                    <td><%= (produtos[index].criadoEm).toLocaleDateString('pt-BR') %></td>
+                                    <td><%= dateFormat(produtos[index].criadoEm)%></td>
                                 </tr>
                             <% } %>
                             
